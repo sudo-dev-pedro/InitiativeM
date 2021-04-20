@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Initiative M</string>
+    <string name="welcome_text">Welcome to MarvelWiki</string>
+    <string name="another_activity">Another Activity</string>
+</resources>

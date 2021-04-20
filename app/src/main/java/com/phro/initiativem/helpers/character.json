@@ -1,0 +1,361 @@
+{
+  "code": 200,
+  "status": "Ok",
+  "copyright": "© 2020 MARVEL",
+  "attributionText": "Data provided by Marvel. © 2020 MARVEL",
+  "attributionHTML": "<a href=\"http://marvel.com\">Data provided by Marvel. © 2020 MARVEL</a>",
+  "etag": "14fbfdedbb46fc2d80ae0907dc0972d0ee4da845",
+  "data": {
+    "offset": 0,
+    "limit": 20,
+    "total": 1,
+    "count": 1,
+    "results": [
+      {
+        "id": 1009652,
+        "name": "Thanos",
+        "description": "The Mad Titan Thanos, a melancholy, brooding individual, consumed with the concept of death, sought out personal power and increased strength, endowing himself with cybernetic implants until he became more powerful than any of his brethren.",
+        "modified": "2016-05-05T15:35:19-0400",
+        "thumbnail": {
+          "path": "http://i.annihil.us/u/prod/marvel/i/mg/6/40/5274137e3e2cd",
+          "extension": "jpg"
+        },
+        "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009652",
+        "comics": {
+          "available": 268,
+          "collectionURI": "http://gateway.marvel.com/v1/public/characters/1009652/comics",
+          "items": [
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/12651",
+              "name": "Alpha Flight (1983) #111"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/5078",
+              "name": "Annihilation (2006) #2"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/5529",
+              "name": "Annihilation (2006) #4"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/3985",
+              "name": "Annihilation: Prologue (2006)"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/4108",
+              "name": "Annihilation: Silver Surfer (2006) #1"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/4218",
+              "name": "Annihilation: Silver Surfer (2006) #2"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/4315",
+              "name": "Annihilation: Silver Surfer (2006) #3"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/4470",
+              "name": "Annihilation: Silver Surfer (2006) #4"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/4822",
+              "name": "Annihilation: The Nova Corps (2006) #1"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/29198",
+              "name": "Avengers (2010) #12"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/6981",
+              "name": "Avengers (1963) #125"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/7131",
+              "name": "Avengers (1963) #260"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/32477",
+              "name": "Avengers & the Infinity Gauntlet (2010) #1"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/32479",
+              "name": "Avengers & the Infinity Gauntlet (2010) #2"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/32481",
+              "name": "Avengers & the Infinity Gauntlet (2010) #3"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/32483",
+              "name": "Avengers & the Infinity Gauntlet (2010) #4"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/32993",
+              "name": "AVENGERS & THE INFINITY GAUNTLET GN-TPB (Trade Paperback)"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/66397",
+              "name": "Avengers & The Infinity Gauntlet (Trade Paperback)"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/6943",
+              "name": "Avengers Annual (1967) #7"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/41354",
+              "name": "Avengers Assemble (2012) #3"
+            }
+          ],
+          "returned": 20
+        },
+        "series": {
+          "available": 125,
+          "collectionURI": "http://gateway.marvel.com/v1/public/characters/1009652/series",
+          "items": [
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/series/2116",
+              "name": "Alpha Flight (1983 - 1994)"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/series/3613",
+              "name": "Annihilation (2006 - 2007)"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/series/1077",
+              "name": "Annihilation: Prologue (2006)"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/series/1078",
+              "name": "Annihilation: Silver Surfer (2006)"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/series/1115",
+              "name": "Annihilation: The Nova Corps (2006)"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/series/1991",
+              "name": "Avengers (1963 - 1996)"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/series/9085",
+              "name": "Avengers (2010 - 2012)"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/series/24044",
+              "name": "Avengers & The Infinity Gauntlet (2018)"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/series/9859",
+              "name": "Avengers & the Infinity Gauntlet (2010)"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/series/10035",
+              "name": "AVENGERS & THE INFINITY GAUNTLET GN-TPB (2011)"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/series/1988",
+              "name": "Avengers Annual (1967 - 1994)"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/series/15373",
+              "name": "Avengers Assemble (2012 - 2014)"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/series/23804",
+              "name": "Avengers by Brian Michael Bendis: The Complete Collection Vol. 3 (2017)"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/series/23143",
+              "name": "Avengers by Jonathan Hickman Omnibus Vol. 1 (2017)"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/series/24135",
+              "name": "Avengers vs. Thanos (2018)"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/series/20555",
+              "name": "Avengers: Celestial Quest (2001)"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/series/22468",
+              "name": "AVENGERS: THE COMPLETE CELESTIAL MADONNA SAGA TPB (2017)"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/series/26494",
+              "name": "Black Order: The Warmasters Of Thanos (2019)"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/series/2000",
+              "name": "Captain Marvel (1968 - 1979)"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/series/690",
+              "name": "Captain Marvel (2000 - 2002)"
+            }
+          ],
+          "returned": 20
+        },
+        "stories": {
+          "available": 293,
+          "collectionURI": "http://gateway.marvel.com/v1/public/characters/1009652/stories",
+          "items": [
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/stories/694",
+              "name": "Cover #694",
+              "type": "cover"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/stories/695",
+              "name": "Interior #695",
+              "type": "interiorStory"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/stories/1412",
+              "name": "Cover #1412",
+              "type": "cover"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/stories/1413",
+              "name": "Interior #1413",
+              "type": "interiorStory"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/stories/1602",
+              "name": "Cover #1602",
+              "type": "cover"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/stories/1603",
+              "name": "Interior #1603",
+              "type": "interiorStory"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/stories/1800",
+              "name": "Cover #1800",
+              "type": "cover"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/stories/1801",
+              "name": "Interior #1801",
+              "type": "interiorStory"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/stories/1842",
+              "name": "Cover #1842",
+              "type": "cover"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/stories/1843",
+              "name": "Interior #1843",
+              "type": "interiorStory"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/stories/2253",
+              "name": "Cover #2253",
+              "type": "cover"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/stories/2254",
+              "name": "Interior #2254",
+              "type": "interiorStory"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/stories/2436",
+              "name": "Cover #2436",
+              "type": "cover"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/stories/2437",
+              "name": "Interior #2437",
+              "type": "interiorStory"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/stories/2438",
+              "name": "Cover #2438",
+              "type": "cover"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/stories/2439",
+              "name": "Interior #2439",
+              "type": "interiorStory"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/stories/2440",
+              "name": "Cover #2440",
+              "type": "cover"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/stories/2441",
+              "name": "Interior #2441",
+              "type": "interiorStory"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/stories/2442",
+              "name": "Cover #2442",
+              "type": "cover"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/stories/2443",
+              "name": "Interior #2443",
+              "type": "interiorStory"
+            }
+          ],
+          "returned": 20
+        },
+        "events": {
+          "available": 8,
+          "collectionURI": "http://gateway.marvel.com/v1/public/characters/1009652/events",
+          "items": [
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/events/229",
+              "name": "Annihilation"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/events/235",
+              "name": "Blood and Thunder"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/events/315",
+              "name": "Infinity"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/events/29",
+              "name": "Infinity War"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/events/319",
+              "name": "Original Sin"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/events/295",
+              "name": "Realm of Kings"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/events/271",
+              "name": "Secret Wars II"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/events/294",
+              "name": "The Thanos Imperative"
+            }
+          ],
+          "returned": 8
+        },
+        "urls": [
+          {
+            "type": "detail",
+            "url": "http://marvel.com/comics/characters/1009652/thanos?utm_campaign=apiRef&utm_source=5b8a61c7c44eac520f3990c13889526a"
+          },
+          {
+            "type": "wiki",
+            "url": "http://marvel.com/universe/Thanos?utm_campaign=apiRef&utm_source=5b8a61c7c44eac520f3990c13889526a"
+          },
+          {
+            "type": "comiclink",
+            "url": "http://marvel.com/comics/characters/1009652/thanos?utm_campaign=apiRef&utm_source=5b8a61c7c44eac520f3990c13889526a"
+          }
+        ]
+      }
+    ]
+  }
+}
