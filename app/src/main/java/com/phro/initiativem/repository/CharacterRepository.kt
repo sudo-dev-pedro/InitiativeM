@@ -13,28 +13,23 @@ import retrofit2.Response
 
 class CharacterRepository {
 
-    fun getCharacter(name: String): MutableLiveData<List<Results>> {
+    fun getCharacter(name: String, onResponse: (List<Results>) -> Unit) {
 
         val marvelClient = API.marvelAPIConfig()
         val endpoint = marvelClient.create(CharacterService::class.java)
         val callback = endpoint.getCharacterByName(name)
 
-        val characterLiveData = MutableLiveData<List<Results>>()
+        callback.enqueue(object : Callback<Base> {
 
-        callback.enqueue(
-            object : Callback<Base> {
+            override fun onFailure(call: Call<Base>, t: Throwable) {
+                onResponse(emptyList())
+            }
 
-                override fun onFailure(call: Call<Base>, t: Throwable) {
-                    Log.d("Erro!", "Falhamos, parça!")
+            override fun onResponse(call: Call<Base>, response: Response<Base>) {
+                if (response.isSuccessful) {
+                    onResponse(response.body()?.data?.results!!)
                 }
-
-                override fun onResponse(call: Call<Base>, response: Response<Base>) {
-                    if (response.isSuccessful) {
-                        characterLiveData.value = response.body()?.data?.results
-                    }
-                }
-            })
-
-        return characterLiveData
+            }
+        })
     }
 }

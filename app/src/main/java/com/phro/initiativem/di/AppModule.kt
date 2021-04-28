@@ -9,7 +9,4 @@ val characterModule = module {
     single {
         CharacterRepository()
     }
-    viewModel {
-        CharacterViewModel(characterRepository = get())
-    }
 }

@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import androidx.appcompat.app.AlertDialog
+import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.phro.initiativem.databinding.ActivityDetailCharacterBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -19,13 +21,13 @@ class DetailCharacterActivity : AppCompatActivity() {
      * This instance will be handled by internal ViewModelFactory
      * and reattach ViewModel instance if needed.
      */
-    private val detailViewModel: CharacterViewModel by viewModel()
+//    private val detailViewModel: CharacterViewModel by viewModel()
 
     // Provendo a VM para o meu escopo.
     // Funciona sem, mas usar o Provider é uma recomendação da Google.
-//    private val detailViewModel by lazy {
-//        ViewModelProvider(this).get(CharacterViewModel::class.java)
-//    }
+    private val detailViewModel by lazy {
+        ViewModelProvider(this).get(CharacterViewModel::class.java)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,17 +36,31 @@ class DetailCharacterActivity : AppCompatActivity() {
         view = characterBinding.root
         setContentView(view)
 
-        detailViewModel.getCharacterByName("Thanos").observe(this) {
+        detailViewModel.getCharacterByName("Thanos")
 
-            Log.d("Imagem", it[0].thumbnail.path + ".jpg")
-            characterBinding.txtName.text = it[0].name
-            characterBinding.txtDescription.text = it[0].description
-            Glide
-                .with(this)
-                .load(it[0].thumbnail.path + ".jpg")
-                .into(characterBinding.thumbnail)
+        observeCharacterLiveData()
+    }
+
+    private fun observeCharacterLiveData() {
+        detailViewModel.characterLiveData.observe(this) {
+
+            if (it != null) {
+                characterBinding.txtName.text = it[0].name
+                characterBinding.txtDescription.text = it[0].description
+                //Image http://i.annihil.us/u/prod/marvel/i/mg/3/50/526548a343e4b.jpg
+                Glide
+                    .with(this)
+                    .load(it[0].thumbnail.path + ".jpg")
+                    .into(characterBinding.thumbnail)
+            } else {
+                val buildDialog = AlertDialog.Builder(this)
+                    .setMessage("Nothing to show!")
+                    .setNegativeButton("Close") { dialog, _ ->
+                        dialog.dismiss()
+                    }
+                val alertDialog = buildDialog.create()
+                alertDialog.show()
+            }
         }
-
-        //Image http://i.annihil.us/u/prod/marvel/i/mg/3/50/526548a343e4b.jpg
     }
 }

@@ -1,19 +1,24 @@
 package com.phro.initiativem.ui.character
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.phro.initiativem.model.Results
 import com.phro.initiativem.repository.CharacterRepository
+import org.koin.core.KoinComponent
+import org.koin.core.inject
 
-class CharacterViewModel(
-    private val characterRepository: CharacterRepository
-) : ViewModel() {
+class CharacterViewModel : ViewModel(), KoinComponent {
 
-    private var characterLiveData = MutableLiveData<List<Results>>()
+    private val characterRepository: CharacterRepository by inject()
 
-    fun getCharacterByName(name: String): MutableLiveData<List<Results>> {
-        characterLiveData = characterRepository.getCharacter(name)
+    private val _characterLiveData = MutableLiveData<List<Results>>()
+    val characterLiveData: LiveData<List<Results>>
+        get() = _characterLiveData
 
-        return characterLiveData
+    fun getCharacterByName(name: String) {
+        characterRepository.getCharacter(name) {
+            _characterLiveData.postValue(it)
+        }
     }
 }
