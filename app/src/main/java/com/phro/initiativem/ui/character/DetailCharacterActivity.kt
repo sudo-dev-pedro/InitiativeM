@@ -54,7 +54,7 @@ class DetailCharacterActivity : AppCompatActivity() {
                     .into(characterBinding.thumbnail)
             } else {
                 val buildDialog = AlertDialog.Builder(this)
-                    .setMessage("Usuário não autorizado (401)")
+                    .setMessage("Tivemos um erro!")
                     .setNegativeButton("Close") { dialog, _ ->
                         dialog.dismiss()
                     }
