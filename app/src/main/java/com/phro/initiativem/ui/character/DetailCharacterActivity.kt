@@ -36,7 +36,7 @@ class DetailCharacterActivity : AppCompatActivity() {
         view = characterBinding.root
         setContentView(view)
 
-        detailViewModel.getCharacterByName("Thanos")
+        detailViewModel.getCharacterByName("Thanos!")
 
         observeCharacterLiveData()
     }
@@ -44,7 +44,7 @@ class DetailCharacterActivity : AppCompatActivity() {
     private fun observeCharacterLiveData() {
         detailViewModel.characterLiveData.observe(this) {
 
-            if (it != null) {
+            if (it.isNotEmpty()) {
                 characterBinding.txtName.text = it[0].name
                 characterBinding.txtDescription.text = it[0].description
                 //Image http://i.annihil.us/u/prod/marvel/i/mg/3/50/526548a343e4b.jpg
@@ -54,7 +54,7 @@ class DetailCharacterActivity : AppCompatActivity() {
                     .into(characterBinding.thumbnail)
             } else {
                 val buildDialog = AlertDialog.Builder(this)
-                    .setMessage("Nothing to show!")
+                    .setMessage("Usuário não autorizado (401)")
                     .setNegativeButton("Close") { dialog, _ ->
                         dialog.dismiss()
                     }
