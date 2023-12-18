@@ -36,7 +36,7 @@ class DetailCharacterActivity : AppCompatActivity() {
         view = characterBinding.root
         setContentView(view)
 
-        detailViewModel.getCharacterByName("Thanos!")
+        detailViewModel.getCharacterByName("Thanos")
 
         observeCharacterLiveData()
     }
@@ -47,7 +47,6 @@ class DetailCharacterActivity : AppCompatActivity() {
             if (it.isNotEmpty()) {
                 characterBinding.txtName.text = it[0].name
                 characterBinding.txtDescription.text = it[0].description
-                //Image http://i.annihil.us/u/prod/marvel/i/mg/3/50/526548a343e4b.jpg
                 Glide
                     .with(this)
                     .load(it[0].thumbnail.path + ".jpg")
@@ -58,8 +57,7 @@ class DetailCharacterActivity : AppCompatActivity() {
                     .setNegativeButton("Close") { dialog, _ ->
                         dialog.dismiss()
                     }
-                val alertDialog = buildDialog.create()
-                alertDialog.show()
+                buildDialog.create().show()
             }
         }
     }
