@@ -5,7 +5,10 @@ import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -16,7 +19,9 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.example.myapplication.ui.theme.InitiativeMTheme
+import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
+import com.bumptech.glide.integration.compose.GlideImage
+import com.phro.initiativem.ui.ui.theme.InitiativeMTheme
 
 class DetailCharacterActivity : AppCompatActivity() {
     private val viewModel by lazy {
@@ -39,31 +44,91 @@ class DetailCharacterActivity : AppCompatActivity() {
     private fun ShowContent(modifier: Modifier = Modifier) {
         val characterState = viewModel.characterStateFlow.collectAsStateWithLifecycle()
 
-        Surface(
-            modifier = modifier,
-            color = MaterialTheme.colorScheme.background
-        ) {
-            CharacterTitle(characterTitle = characterState.value?.get(0)?.name ?: "Empty")
+        /**
+         * Modifiers:
+         * https://developer.android.com/jetpack/compose/modifiers-list?hl=pt-br
+         */
+        Surface(modifier = modifier) {
+            Column (
+                modifier = modifier
+                    .fillMaxWidth()
+            ) {
+                CharacterImage(
+                    characterState.value?.get(0)?.thumbnail?.path
+                        ?: "Loading..."
+                )
+                CharacterTitle(
+                    characterTitle = characterState.value?.get(0)?.name
+                        ?: "Loading..."
+                )
+                CharacterDescription(
+                    characterDescription = characterState.value?.get(0)?.description
+                        ?: "Loading..."
+                )
+            }
         }
+    }
 
+    @OptIn(ExperimentalGlideComposeApi::class)
+    @Composable
+    private fun CharacterImage(
+        model: String,
+        modifier: Modifier = Modifier
+    ) {
+        Box(
+            modifier
+                .fillMaxWidth()
+                .padding(28.dp)
+        ) {
+            GlideImage(
+                model = model,
+                contentDescription = "Image",
+                modifier = modifier
+            ) {
+                it.load("$model.jpg").circleCrop()
+            }
+        }
     }
 
     // Preview Parameter - https://foso.github.io/Jetpack-Compose-Playground/general/preview/previewparameter/
     @Composable
-    private fun CharacterTitle(characterTitle: String) {
-        Surface(color = MaterialTheme.colorScheme.primary) {
+    private fun CharacterTitle(characterTitle: String, modifier: Modifier = Modifier) {
+        Box(
+            modifier = modifier
+                .fillMaxWidth()
+                .padding(
+                    vertical = 12.dp,
+                    horizontal = 12.dp,
+                )
+        ) {
             Text(
-                text = characterTitle,
-                /**
-                 * https://developer.android.com/jetpack/compose/modifiers-list?hl=pt-br
-                 */
-                modifier = Modifier.padding(10.dp)
+                style = MaterialTheme.typography.headlineMedium,
+                text = characterTitle
+            )
+        }
+    }
+
+    @Composable
+    private fun CharacterDescription(
+        characterDescription: String,
+        modifier: Modifier = Modifier
+    ) {
+        Box(
+            modifier = modifier
+                .fillMaxWidth()
+                .padding(
+                    vertical = 12.dp,
+                    horizontal = 12.dp
+                )
+        ) {
+            Text(
+                text = characterDescription
             )
         }
     }
 
     @RequiresApi(Build.VERSION_CODES.S)
-    @Preview(showBackground = true)
+    @Preview(showBackground = true, apiLevel = 34)
     @Composable
     private fun Preview() {
         InitiativeMTheme {
@@ -73,25 +138,4 @@ class DetailCharacterActivity : AppCompatActivity() {
         }
     }
 
-
-//    private fun observeCharacterLiveData() {
-//        detailViewModel.characterLiveData.observe(this) {
-
-//            if (it.isNotEmpty()) {
-//                characterBinding.txtName.text = it[0].name
-//                characterBinding.txtDescription.text = it[0].description
-//                Glide
-//                    .with(this)
-//                    .load(it[0].thumbnail.path + ".jpg")
-//                    .into(characterBinding.thumbnail)
-//            } else {
-//                val buildDialog = AlertDialog.Builder(this)
-//                    .setMessage("Tivemos um erro!")
-//                    .setNegativeButton("Close") { dialog, _ ->
-//                        dialog.dismiss()
-//                    }
-//                buildDialog.create().show()
-//            }
-//        }
-//    }
 }
