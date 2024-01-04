@@ -49,9 +49,8 @@ class DetailCharacterActivity : AppCompatActivity() {
          * https://developer.android.com/jetpack/compose/modifiers-list?hl=pt-br
          */
         Surface(modifier = modifier) {
-            Column (
-                modifier = modifier
-                    .fillMaxWidth()
+            Column(
+                modifier = modifier.fillMaxWidth()
             ) {
                 CharacterImage(
                     characterState.value?.get(0)?.thumbnail?.path
